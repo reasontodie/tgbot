@@ -41,7 +41,7 @@ async def get_today_statistic(message: Message) -> None:
 
         if change == 0 and last_count == 0:
             last_count = total_count
-        elif last_count < total_count or last_count > total_count:
+        elif last_count <= total_count or last_count >= total_count:
             change = total_count - last_count
             last_count = total_count
 
