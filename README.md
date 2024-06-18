@@ -16,4 +16,5 @@ In the `config.json` file:
 
 # Launch
 Open the command line in the folder with the main.py file and enter the command:
+
 `python .\main.py`
