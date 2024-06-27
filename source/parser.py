@@ -65,4 +65,7 @@ class Parser:
 
     async def parse_and_save(self, keyword: str, datetime: dt) -> None:
         total_count = await self.get_published_vacancies_list(keyword)
-        self.db.insert_data_to_db(total_count, datetime)
+        if total_count is not None:
+            self.db.insert_data_to_db(total_count, datetime)
+        else:
+            await self.parse_and_save(keyword, datetime)
